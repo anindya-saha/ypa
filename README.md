@@ -1,5 +1,6 @@
 YPA Event Management System
 ===========================
+Write all your RSpec tests in this branch.
 
 Test User Account:
 Username: test@test.com
