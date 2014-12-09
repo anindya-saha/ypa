@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">User ID</Data></Cell>
+        <Cell><Data ss:Type="String">First Name</Data></Cell>
+        <Cell><Data ss:Type="String">Last Name</Data></Cell>
+        <Cell><Data ss:Type="String">Date of Birth</Data></Cell>
+        <Cell><Data ss:Type="String">Phone</Data></Cell>
+        <Cell><Data ss:Type="String">Organization</Data></Cell>
+        <Cell><Data ss:Type="String">Interests</Data></Cell>
+        <Cell><Data ss:Type="String">Volunteer</Data></Cell>
+        <Cell><Data ss:Type="String">Donate</Data></Cell>
+        <Cell><Data ss:Type="String">Admin</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+      </Row>
+      <% @users.each do |user| %>
+          <Row>
+            <Cell><Data ss:Type="Number"><%= user.user_id %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.first_name %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.last_name %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.dob %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.phone %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.organization %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.interests %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.volunteer %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.donate %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.admin %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= user.email %></Data></Cell>
+          </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

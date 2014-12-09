@@ -1,0 +1,64 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'Name' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desc, 'Description' %><br />
+    <%= f.text_area :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :from_date, 'From Date' %><br />
+    <%= f.date_select :from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date, 'To Date' %><br />
+    <%= f.date_select :to_date %>
+  </div>
+  <div class="field">
+    <%= f.label :from_time, 'From Time' %><br />
+    <%= f.time_select :from_time %>
+  </div>
+  <div class="field">
+    <%= f.label :to_time, 'To Time' %><br />
+    <%= f.time_select :to_time %>
+  </div>
+  <div class="field">
+    <%= f.label :venue, 'Venue' %><br />
+    <%= f.text_field :venue %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id, 'Category' %><br />
+    <%= collection_select(:event, :category_id, Category.all, :id, :name) %>
+  </div>
+
+  <div>
+    <p>Check-in will be allowed throughout the duration of the event.  If you would like to allow check-in
+    before the start time and/or before the end time, please specify the desired thresholds below:</p>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_before_start, 'Sign-In Starts (minutes before event starts)' %><br />
+    <%= f.number_field :min_before_start, value: 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :max_before_end, 'Sign-In Ends (minutes before event ends)' %><br />
+    <%= f.number_field :max_before_end, value: 30 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

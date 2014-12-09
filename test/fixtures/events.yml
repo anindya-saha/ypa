@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_id: 1
+  name: MyString
+  description: MyText
+  from_date: 2014-10-27
+  to_date: 2014-10-27
+  from_time: 2014-10-27 22:59:59
+  to_time: 2014-10-27 22:59:59
+  venue: MyString
+  category: MyString
+  min_before_start: 1
+  max_before_end: 1
+  created_by: MyString
+  updated_by: MyString
+  deleted: false
+
+two:
+  event_id: 1
+  name: MyString
+  description: MyText
+  from_date: 2014-10-27
+  to_date: 2014-10-27
+  from_time: 2014-10-27 22:59:59
+  to_time: 2014-10-27 22:59:59
+  venue: MyString
+  category: MyString
+  min_before_start: 1
+  max_before_end: 1
+  created_by: MyString
+  updated_by: MyString
+  deleted: false

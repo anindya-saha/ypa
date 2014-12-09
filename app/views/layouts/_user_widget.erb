@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <p><%= current_user.email %> (<a href="/users/edit">My Account</a> | <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>)
+<% else %>
+  <p>You are not signed in.</p>
+<%= link_to 'Login', new_user_session_path %>
+<% end %>

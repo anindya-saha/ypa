@@ -1,0 +1,10 @@
+<% content_for :home do %>
+<h1>Editing event</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @event %> |
+<%= link_to 'Back', events_path %>
+
+<% end %>
+<%= render template: "layouts/home" %>

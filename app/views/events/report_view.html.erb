@@ -1,0 +1,39 @@
+<% content_for :home do %>
+
+    <h1>
+      <%= @event.name %> <div style="color: red; font-weight: bold; font-size: small; display: inline;">REPORT</div>
+    </h1>
+
+    <table cellpadding="5" cellspacing="5" style="border:1px solid #333333">
+      <tr>
+      <td align="right"><strong>Total RSVPs:</strong></td>
+      <td><%= @count_rsvp %></td>
+      </tr>
+      <tr>
+        <td align="right"><strong>Total Checked-in:</strong></td>
+        <td><%= @count_check_in%></td>
+      </tr>
+    </table>
+
+    <table cellpadding="5" cellspacing="5">
+        <tr>
+          <th style="font-size:10pt;" align="left">Name</th>
+          <th style="font-size:10pt;" align="left">Email</th>
+          <th style="font-size:10pt;" align="left">Phone</th>
+          <th style="font-size:10pt;" align="center">RSVP?</th>
+          <th style="font-size:10pt;" align="center">Checked-in?</th>
+        </tr>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.last_name %>, <%= user.first_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td align="center"><%= user.rsvp.upcase %></td>
+            <td align="center"><%= user.signin.upcase %></td>
+          </tr>
+      <% end %>
+    </table>
+
+
+<% end %>
+<%= render template: "layouts/home" %>

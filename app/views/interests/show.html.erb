@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Desciption:</b>
+  <%= @interest.desciption %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @interest.created_by %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%= @interest.updated_by %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @interest.deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_interest_path(@interest) %> |
+<%= link_to 'Back', interests_path %>

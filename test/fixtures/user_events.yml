@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  event_id: 1
+  rsvp: false
+  signin: false
+  created_by: MyString
+  updated_by: MyString
+  deleted: false
+
+two:
+  user_id: 1
+  event_id: 1
+  rsvp: false
+  signin: false
+  created_by: MyString
+  updated_by: MyString
+  deleted: false

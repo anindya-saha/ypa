@@ -1,0 +1,38 @@
+<% content_for :home do %>
+
+    <h1>Reports</h1>
+
+    <div style="padding-bottom:7px;">
+    <% if @past == "past" %>
+        <a href="/reports/">Show All Events</a>
+    <% else %>
+        <a href="/reports/past">Show Only Past Events</a>
+    <% end %>
+    </div>
+    <table class="pretty" cellspacing="2" cellpadding="2" border="1">
+      <tr>
+        <th><%= sortable "name", Event %></th>
+        <th>Venue</th>
+        <th><%= sortable "from_date", "From" %></th>
+        <th><%= sortable "to_date", "To" %></th>
+        <th><%= sortable "categories.name", "Category" %></th>
+        <th colspan="1">Actions</th>
+      </tr>
+
+      <% @events.each do |event| %>
+          <tr>
+            <td><%= event.name %></td>
+            <td><%= event.venue %></td>
+            <td><%= event.from_date.strftime('%d-%b-%Y') + ' ' + event.from_time.strftime('%I:%M %p') %></td>
+            <td><%= event.to_date.strftime('%d-%b-%Y') + ' ' + event.to_time.strftime('%I:%M %p') %></td>
+            <td><%= event.category.blank? ? '' : event.category.name %></td>
+            <td><a href="/reports/view/<%=event.event_id%>">View</a></td>
+          </tr>
+      <% end %>
+
+    </table>
+    <%= will_paginate @events %>
+    <br />
+
+<% end %>
+<%= render template: "layouts/home" %>

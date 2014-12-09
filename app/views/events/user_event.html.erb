@@ -1,0 +1,37 @@
+<% content_for :home do %>
+
+    <h1>My Events</h1>
+
+    <table class="pretty" cellspacing="2" cellpadding="2" border="1">
+      <tr>
+        <th><%= sortable "name", Event %></th>
+        <th>Description</th>
+        <th><%= sortable "venue", "Venue" %></th>
+        <th><%= sortable "categories.name", "Category" %></th>
+        <th><%= sortable "from_date", "From" %></th>
+        <th><%= sortable "to_date", "To" %></th>
+        <!---- <th>Check-in Starts</th> ---->
+        <!---- <th>Check-in Ends</th>  ---->
+        <th colspan="1">Actions</th>
+      </tr>
+
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.desc %></td>
+        <td><%= event.venue %></td>
+        <td><%= event.category.blank? ? '' : event.category.name %></td>
+        <td><%= event.from_date.strftime('%d-%b-%Y') + ' ' + event.from_time.strftime('%I:%M %p') %></td>
+        <td><%= event.to_date.strftime('%d-%b-%Y') + ' ' + event.to_time.strftime('%I:%M %p') %></td>
+        <!--- <td><%= event.min_before_start %></td> ---->
+        <!--- <td><%= event.max_before_end %></td> ---->
+        <td><%= link_to 'View', event %></td>
+      </tr>
+    <% end %>
+
+    </table>
+    <%= will_paginate @events %>
+    <br />
+
+<% end %>
+<%= render template: "layouts/home" %>

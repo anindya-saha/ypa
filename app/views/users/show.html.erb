@@ -1,0 +1,43 @@
+<% content_for :home do %>
+    <h1>
+      <%= @user.first_name %> <%= @user.last_name %>
+      <% if @user.admin == true %>
+          <div style="color: red; font-weight: bold; font-size: small; display: inline;">Admin</div>
+      <%end%>
+    </h1>
+    <% if @user.volunteer == true and @user.donate == true %>
+        <b>Donor | Volunteer</b>
+    <% elsif @user.volunteer == true %>
+        <b>Volunteer</b>
+    <% elsif @user.donate == true %>
+        <b>Donor</b>
+    <%end%>
+    <table cellspacing="12" cellpadding="4">
+      <tr>
+        <td>Organization: </td>
+        <td><%= @user.organization %></td>
+      </tr>
+        <tr>
+            <td>Email: </td>
+            <td><%= @user.email %></td>
+        </tr>
+      <tr>
+        <td>Phone: </td>
+        <td><%= @user.phone %></td>
+      </tr>
+      <tr>
+        <td>DOB:</td>
+        <td><%= @user.dob %></td>
+      </tr>
+      <tr>
+        <td>Interests: </td>
+        <td><%= @user.interests %></td>
+      </tr>
+    </table>
+
+    <p><a href="/users/list">Back</a></p>
+
+<% end %>
+
+
+<%= render template: "layouts/home" %>
