@@ -37,6 +37,18 @@ gem 'will_paginate'
 gem 'time_difference'
 gem 'devise'
 
+
+group :test do
+  #gem 'rspec-support', '3.1.2'
+  #gem 'rspec-rails'
+  gem 'rspec-core'
+  gem 'rspec-expectations'
+  gem 'rspec-mocks'
+  gem 'rspec-support'
+  gem 'rspec-rails'
+  gem 'rspec-activemodel-mocks'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
