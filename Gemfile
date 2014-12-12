@@ -10,10 +10,10 @@ group :development, :test do
   gem 'faker'
 end
 
-#group :production do
-  #gem 'pg',             '0.17.1'
-  #gem 'rails_12factor', '0.0.2'
-#end
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
 
 #group :client do
   #gem 'mysql', '~> 2.9.1'
@@ -44,10 +44,11 @@ gem 'devise'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+ruby '2.1.4'
