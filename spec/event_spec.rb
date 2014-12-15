@@ -17,20 +17,20 @@ describe EventsController, type: :controller do
       today["written_on(1i)"] = "2014"
       today["written_on(2i)"] = "12"
       today["written_on(3i)"] = "10"
-      @events = get "index"
-      puts "found"
-     #@event = EventsController.should_receive "Event-1"", 4, "nTEfcDDxM", fromday, today
+      @event = get :index
+      if(response.should be_success)
+        puts 'found match'
+      else
+        puts 'not found'
 
 
-#  before :each do
-
-
-          if @event
-            puts "found" + " "+  @event.length.to_s + " rows"
-          end
-        end
-      end
-  #  end
+    end
+    end
   end
+  end
+
+
+
+
 
 
