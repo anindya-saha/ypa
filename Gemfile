@@ -47,6 +47,9 @@ group :test do
   gem 'rspec-support'
   gem 'rspec-rails'
   gem 'rspec-activemodel-mocks'
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 # To use ActiveModel has_secure_password
