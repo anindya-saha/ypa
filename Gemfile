@@ -5,9 +5,21 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.19'
 
 
-group :development, :test do
+group :development do
   gem 'sqlite3'
   gem 'faker'
+end
+
+
+group :test do
+  gem 'sqlite3'
+  gem 'faker'
+  gem 'cucumber'
+  gem 'rspec-expectations'
+  gem 'poltergeist', ">= 1.4.0"
+  gem 'selenium-webdriver'
+  gem 'launchy'
+  gem 'rest-client'
 end
 
 #group :production do
@@ -36,21 +48,6 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'time_difference'
 gem 'devise'
-
-
-group :test do
-  #gem 'rspec-support', '3.1.2'
-  #gem 'rspec-rails'
-  gem 'rspec-core'
-  gem 'rspec-expectations'
-  gem 'rspec-mocks'
-  gem 'rspec-support'
-  gem 'rspec-rails'
-  gem 'rspec-activemodel-mocks'
-  gem 'cucumber'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
